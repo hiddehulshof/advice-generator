@@ -17,9 +17,12 @@ body {
 }
 
 .quote {
-    font-size: 28px;
-    transition-property: color;
-    transition-duration: 1s;
+    p {
+        font-size: 28px;
+        transition-property: color;
+        transition-duration: 1s;
+        color: $primary-cyan;
+    }
 }
 
 .advice__wrapper {

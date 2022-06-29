@@ -7,10 +7,11 @@ body {
   overflow-y: hidden;
 }
 
-.quote {
+.quote p {
   font-size: 28px;
   transition-property: color;
   transition-duration: 1s;
+  color: hsl(193deg, 38%, 86%);
 }
 
 .advice__wrapper {
