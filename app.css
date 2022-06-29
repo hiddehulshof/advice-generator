@@ -27,7 +27,7 @@ body {
   color: hsl(150deg, 100%, 66%);
 }
 .advice__header h1 {
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
 .advice__box {
