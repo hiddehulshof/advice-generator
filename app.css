@@ -164,7 +164,7 @@ body {
   background: linear-gradient(-45deg, hsl(150deg, 100%, 66%) 0%, hsla(140deg, 100%, 66%, 0.5) 100%);
   transform: translate3d(0px, 0px, 0) scale(0.85);
   filter: blur(20px);
-  opacity: var(0.7);
+  opacity: 0.7;
   border-radius: inherit;
 }
 @media only screen and (min-width: 980px) {

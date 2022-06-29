@@ -1,8 +1,6 @@
-const adviceWrapper = document.querySelector('#advice-wrapper');
-const adviceId = document.querySelector('#advice-id');
-const adviceBox = document.querySelector('#advice-box');
-
-const initialHeight = 200;
+const adviceWrapper: HTMLElement = document.querySelector('#advice-wrapper');
+const adviceId: HTMLElement = document.querySelector('#advice-id');
+const adviceBox: HTMLElement = document.querySelector('#advice-box');
 
 interface Advice {
     id: number,
@@ -16,13 +14,11 @@ function initialAdvice(): void {
         return response.json();
     }).then(adviceData => {
         advice = adviceData.slip;
-        adviceWrapper.innerHTML = `<p>“${advice.advice}”</p>`;
-        adviceId.textContent = '#' + String(advice.id)
+        setAdviceHtml()
     }).catch(error => {
         console.log(error);
     });
 }
-
 
 function getAdvice(): void {
     adviceBox.classList.add('reveal')
@@ -37,14 +33,17 @@ function getAdvice(): void {
     });
 }
 
-const colorAnimation = () => {
-    adviceWrapper.style.color = 'hsl(193, 38%, 86%)'
+const setAdviceHtml = (): void => {
     adviceWrapper.innerHTML = `<p>“${advice.advice}”</p>`;
     adviceId.textContent = '#' + String(advice.id)
+}
+
+const colorAnimation = () => {
+    adviceWrapper.style.color = 'hsl(193, 38%, 86%)'
+    setAdviceHtml()
     adviceBox.classList.remove('reveal')
 }
+
 window.onload = () => {
     initialAdvice()
 }
-
-// console.log(advice());
