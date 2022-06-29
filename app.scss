@@ -7,7 +7,6 @@ $neutral-light: hsl(217, 19%, 38%);
 $neutral-medium: hsl(217, 19%, 24%);
 $neutral-dark: hsl(218, 23%, 16%);
 
-
 body {
     font-family: Manrope;
     font-weight: 800;
@@ -113,6 +112,7 @@ body {
     display: flex;
     justify-content: center;
 }
+
 .advice__content {
     padding: 2rem;
     text-align: center;
@@ -124,6 +124,7 @@ body {
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
 }
+
 .advice__divider-icon {
     background-image: url("images/pattern-divider-mobile.svg");
     background-position: center;
@@ -145,10 +146,6 @@ body {
     background-color: $primary-green;
     width: 85px;
     height: 85px;
-    :before {
-        background-color: $primary-green;
-        transition: opacity 0.3s;
-    }
     &:focus-visible {
         outline: 2px dotted $primary-cyan;
         outline-offset: 0;
@@ -178,8 +175,6 @@ body {
         bottom: -37.5px;
     }
 }
-
-
 
 .dice__icon {
     display: inline-block;
