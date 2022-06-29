@@ -21,11 +21,12 @@ function initialAdvice(): void {
 }
 
 function getAdvice(): void {
+    adviceWrapper.style.color = 'hsl(217, 19%, 24%)'
+
     adviceBox.classList.add('reveal')
     fetch('https://api.adviceslip.com/advice', {cache: "no-store"}).then(response => {
         return response.json();
     }).then(adviceData => {
-        adviceWrapper.style.color = 'hsl(217, 19%, 24%)'
         advice = adviceData.slip;
         setTimeout(colorAnimation, 1000);
     }).catch(error => {

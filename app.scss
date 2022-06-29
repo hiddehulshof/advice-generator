@@ -7,6 +7,7 @@ $neutral-light: hsl(217, 19%, 38%);
 $neutral-medium: hsl(217, 19%, 24%);
 $neutral-dark: hsl(218, 23%, 16%);
 
+
 body {
     font-family: Manrope;
     font-weight: 800;
@@ -16,12 +17,9 @@ body {
 }
 
 .quote {
-    p {
-        font-size: 28px;
-        transition-property: color;
-        transition-duration: 1s;
-        color: $primary-cyan;
-    }
+    font-size: 28px;
+    transition-property: color;
+    transition-duration: 1s;
 }
 
 .advice__wrapper {
@@ -36,7 +34,7 @@ body {
     letter-spacing: 0.25rem;
     color: $primary-green;
     h1 {
-        font-size: 0.8rem;
+        font-size: 1rem;
     }
 }
 
@@ -112,7 +110,6 @@ body {
     display: flex;
     justify-content: center;
 }
-
 .advice__content {
     padding: 2rem;
     text-align: center;
@@ -124,7 +121,6 @@ body {
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
 }
-
 .advice__divider-icon {
     background-image: url("images/pattern-divider-mobile.svg");
     background-position: center;
@@ -146,6 +142,10 @@ body {
     background-color: $primary-green;
     width: 85px;
     height: 85px;
+    :before {
+        background-color: $primary-green;
+        transition: opacity 0.3s;
+    }
     &:focus-visible {
         outline: 2px dotted $primary-cyan;
         outline-offset: 0;
@@ -165,7 +165,7 @@ body {
             background: linear-gradient(-45deg, hsla(150, 100%, 66%) 0%, hsl(140, 100%, 66%, 50%) 100% );
             transform: translate3d(0px, 0px, 0) scale(0.85);
             filter: blur(20px);
-            opacity: 0.7;
+            opacity: var(0.7);
             border-radius: inherit;
         }
     }
@@ -175,6 +175,8 @@ body {
         bottom: -37.5px;
     }
 }
+
+
 
 .dice__icon {
     display: inline-block;

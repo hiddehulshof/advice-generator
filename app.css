@@ -7,11 +7,10 @@ body {
   overflow-y: hidden;
 }
 
-.quote p {
+.quote {
   font-size: 28px;
   transition-property: color;
   transition-duration: 1s;
-  color: hsl(193deg, 38%, 86%);
 }
 
 .advice__wrapper {
@@ -27,7 +26,7 @@ body {
   color: hsl(150deg, 100%, 66%);
 }
 .advice__header h1 {
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .advice__box {
@@ -144,6 +143,10 @@ body {
   width: 85px;
   height: 85px;
 }
+.dice__button :before {
+  background-color: hsl(150deg, 100%, 66%);
+  transition: opacity 0.3s;
+}
 .dice__button:focus-visible {
   outline: 2px dotted hsl(193deg, 38%, 86%);
   outline-offset: 0;
@@ -164,7 +167,7 @@ body {
   background: linear-gradient(-45deg, hsl(150deg, 100%, 66%) 0%, hsla(140deg, 100%, 66%, 0.5) 100%);
   transform: translate3d(0px, 0px, 0) scale(0.85);
   filter: blur(20px);
-  opacity: 0.7;
+  opacity: var(0.7);
   border-radius: inherit;
 }
 @media only screen and (min-width: 980px) {
