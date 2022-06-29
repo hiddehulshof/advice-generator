@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
+$primary-cyan: hsl(193, 38%, 86%);
+$primary-green: hsl(150, 100%, 66%);
+
+$neutral-light: hsl(217, 19%, 38%);
+$neutral-medium: hsl(217, 19%, 24%);
+$neutral-dark: hsl(218, 23%, 16%);
+
+
+body {
+    font-family: Manrope;
+    font-weight: 800;
+    background-color: $neutral-dark;
+    color: $primary-cyan;
+    overflow-y: hidden;
+}
+
+.quote {
+    font-size: 28px;
+    transition-property: color;
+    transition-duration: 1s;
+}
+
+.advice__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-wrap: wrap;
+}
+
+.advice__header {
+    letter-spacing: 0.25rem;
+    color: $primary-green;
+    h1 {
+        font-size: 1rem;
+    }
+}
+
+.advice__box {
+    background-color: $neutral-medium;
+    z-index: 0;
+    width: 90vw;
+    border-radius: 10px;
+    position: relative;
+    @media only screen and (min-width: 980px) {
+        width: 40vw;
+    }
+    @media only screen and (min-width: 1680px) {
+        width: 30vw;
+    }
+}
+
+.advice__box.reveal {
+    animation-name: revealMobile;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    @media only screen and (min-width: 980px) {
+        animation-name: reveal;
+    }
+    @media only screen and (min-width: 1680px) {
+        animation-name: revealLarge;
+    }
+}
+
+@keyframes revealMobile {
+    0% {
+        width: 90vw;
+    }
+    50% {
+        width: 95vw;
+    }
+    100% {
+        width: 90vw;
+    }
+}
+
+@keyframes reveal {
+    0% {
+        width: 40vw;
+    }
+    50% {
+        width: 45vw;
+    }
+    100% {
+        width: 40vw;
+    }
+}
+
+@keyframes revealLarge {
+    0% {
+        width: 30vw;
+    }
+    50% {
+        width: 35vw;
+    }
+    100% {
+        width: 30vw;
+    }
+}
+
+.advice__box-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.button__wrapper {
+    display: flex;
+    justify-content: center;
+}
+.advice__content {
+    padding: 2rem;
+    text-align: center;
+}
+
+.advice__divider {
+    display: flex;
+    justify-content: center;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+.advice__divider-icon {
+    background-image: url("images/pattern-divider-mobile.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 295px;
+    height: 16px;
+    @media only screen and (min-width: 980px) {
+        background-image: url("images/pattern-divider-desktop.svg");
+        width: 444px;
+    }
+}
+
+.dice__button {
+    position: absolute;
+    bottom: -45px;
+    border-radius: 100%;
+    border: none;
+    background-color: $primary-green;
+    width: 85px;
+    height: 85px;
+    :before {
+        background-color: $primary-green;
+        transition: opacity 0.3s;
+    }
+    &:focus-visible {
+        outline: 2px dotted $primary-cyan;
+        outline-offset: 0;
+        -webkit-box-shadow: 0 0 0 2px $neutral-dark;
+        box-shadow: 0 0 0 2px $neutral-dark;
+    }
+    &:hover {
+        cursor: pointer;
+        :before {
+            content: "";
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(-45deg, hsla(150, 100%, 66%) 0%, hsl(140, 100%, 66%, 50%) 100% );
+            transform: translate3d(0px, 0px, 0) scale(0.85);
+            filter: blur(20px);
+            opacity: var(0.7);
+            border-radius: inherit;
+        }
+    }
+    @media only screen and (min-width: 980px) {
+        width: 75px;
+        height: 75px;
+        bottom: -37.5px;
+    }
+}
+
+
+
+.dice__icon {
+    display: inline-block;
+    background-image: url("images/icon-dice.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 2rem;
+    height: 2rem;
+    @media only screen and (min-width: 980px) {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}

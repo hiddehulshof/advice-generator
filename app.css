@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+body {
+  font-family: Manrope;
+  font-weight: 800;
+  background-color: hsl(218deg, 23%, 16%);
+  color: hsl(193deg, 38%, 86%);
+  overflow-y: hidden;
+}
+
+.quote {
+  font-size: 28px;
+  transition-property: color;
+  transition-duration: 1s;
+}
+
+.advice__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-wrap: wrap;
+}
+
+.advice__header {
+  letter-spacing: 0.25rem;
+  color: hsl(150deg, 100%, 66%);
+}
+.advice__header h1 {
+  font-size: 1rem;
+}
+
+.advice__box {
+  background-color: hsl(217deg, 19%, 24%);
+  z-index: 0;
+  width: 90vw;
+  border-radius: 10px;
+  position: relative;
+}
+@media only screen and (min-width: 980px) {
+  .advice__box {
+    width: 40vw;
+  }
+}
+@media only screen and (min-width: 1680px) {
+  .advice__box {
+    width: 30vw;
+  }
+}
+
+.advice__box.reveal {
+  animation-name: revealMobile;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@media only screen and (min-width: 980px) {
+  .advice__box.reveal {
+    animation-name: reveal;
+  }
+}
+@media only screen and (min-width: 1680px) {
+  .advice__box.reveal {
+    animation-name: revealLarge;
+  }
+}
+
+@keyframes revealMobile {
+  0% {
+    width: 90vw;
+  }
+  50% {
+    width: 95vw;
+  }
+  100% {
+    width: 90vw;
+  }
+}
+@keyframes reveal {
+  0% {
+    width: 40vw;
+  }
+  50% {
+    width: 45vw;
+  }
+  100% {
+    width: 40vw;
+  }
+}
+@keyframes revealLarge {
+  0% {
+    width: 30vw;
+  }
+  50% {
+    width: 35vw;
+  }
+  100% {
+    width: 30vw;
+  }
+}
+.advice__box-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.button__wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.advice__content {
+  padding: 2rem;
+  text-align: center;
+}
+
+.advice__divider {
+  display: flex;
+  justify-content: center;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.advice__divider-icon {
+  background-image: url("images/pattern-divider-mobile.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 295px;
+  height: 16px;
+}
+@media only screen and (min-width: 980px) {
+  .advice__divider-icon {
+    background-image: url("images/pattern-divider-desktop.svg");
+    width: 444px;
+  }
+}
+
+.dice__button {
+  position: absolute;
+  bottom: -45px;
+  border-radius: 100%;
+  border: none;
+  background-color: hsl(150deg, 100%, 66%);
+  width: 85px;
+  height: 85px;
+}
+.dice__button :before {
+  background-color: hsl(150deg, 100%, 66%);
+  transition: opacity 0.3s;
+}
+.dice__button:focus-visible {
+  outline: 2px dotted hsl(193deg, 38%, 86%);
+  outline-offset: 0;
+  -webkit-box-shadow: 0 0 0 2px hsl(218deg, 23%, 16%);
+  box-shadow: 0 0 0 2px hsl(218deg, 23%, 16%);
+}
+.dice__button:hover {
+  cursor: pointer;
+}
+.dice__button:hover :before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(-45deg, hsl(150deg, 100%, 66%) 0%, hsla(140deg, 100%, 66%, 0.5) 100%);
+  transform: translate3d(0px, 0px, 0) scale(0.85);
+  filter: blur(20px);
+  opacity: var(0.7);
+  border-radius: inherit;
+}
+@media only screen and (min-width: 980px) {
+  .dice__button {
+    width: 75px;
+    height: 75px;
+    bottom: -37.5px;
+  }
+}
+
+.dice__icon {
+  display: inline-block;
+  background-image: url("images/icon-dice.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 2rem;
+  height: 2rem;
+}
+@media only screen and (min-width: 980px) {
+  .dice__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+/*# sourceMappingURL=app.css.map */
