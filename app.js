@@ -14,6 +14,7 @@ function initialAdvice() {
 }
 function getAdvice() {
     adviceWrapper.style.color = 'hsl(217, 19%, 24%)';
+    adviceWrapper.style.visibility = 'hidden';
     adviceBox.classList.add('reveal');
     fetch('https://api.adviceslip.com/advice', { cache: "no-store" }).then(function (response) {
         return response.json();
@@ -29,6 +30,7 @@ var setAdviceHtml = function () {
     adviceId.textContent = '#' + String(advice.id);
 };
 var colorAnimation = function () {
+    adviceWrapper.style.visibility = null;
     adviceWrapper.style.color = 'hsl(193, 38%, 86%)';
     setAdviceHtml();
     adviceBox.classList.remove('reveal');
