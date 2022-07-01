@@ -175,9 +175,9 @@ body {
 }
 @media only screen and (min-width: 980px) {
   .dice__button {
-    width: 75px;
-    height: 75px;
-    bottom: -37.5px;
+    width: 60px;
+    height: 60px;
+    bottom: -30px;
   }
 }
 
